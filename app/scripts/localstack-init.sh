@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-awslocal sqs create-queue --queue-name order-events-dlq
+awslocal sqs create-queue --region eu-west-2 --queue-name order-events-dlq
 DLQ_ARN=$(awslocal sqs get-queue-attributes \
   --queue-url http://localstack:4566/000000000000/order-events-dlq \
   --attribute-names QueueArn \

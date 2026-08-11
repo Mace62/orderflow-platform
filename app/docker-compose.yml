@@ -21,8 +21,8 @@ services:
       - "4566:4566"
     environment:
       SERVICES: sqs
-      DEFAULT_REGION: us-east-1
-      AWS_DEFAULT_REGION: us-east-1
+      DEFAULT_REGION: eu-west-2
+      AWS_DEFAULT_REGION: eu-west-2
     volumes:
       - ./scripts/localstack-init.sh:/etc/localstack/init/ready.d/init.sh
 
@@ -50,7 +50,7 @@ services:
       DATABASE_URL: postgres://app:localdev@postgres:5432/orders?sslmode=disable
       SQS_QUEUE_URL: http://localstack:4566/000000000000/order-events
       AWS_ENDPOINT_URL: http://localstack:4566
-      AWS_REGION: us-east-1
+      AWS_REGION: eu-west-2
       AWS_ACCESS_KEY_ID: test
       AWS_SECRET_ACCESS_KEY: test
     depends_on:
@@ -74,7 +74,7 @@ services:
       DATABASE_URL: postgres://app:localdev@postgres:5432/orders?sslmode=disable
       SQS_QUEUE_URL: http://localstack:4566/000000000000/order-events
       AWS_ENDPOINT_URL: http://localstack:4566
-      AWS_REGION: us-east-1
+      AWS_REGION: eu-west-2
       AWS_ACCESS_KEY_ID: test
       AWS_SECRET_ACCESS_KEY: test
     depends_on:
@@ -98,7 +98,7 @@ services:
       DATABASE_URL: postgres://app:localdev@postgres:5432/orders?sslmode=disable
       SQS_QUEUE_URL: http://localstack:4566/000000000000/order-events
       AWS_ENDPOINT_URL: http://localstack:4566
-      AWS_REGION: us-east-1
+      AWS_REGION: eu-west-2
       AWS_ACCESS_KEY_ID: test
       AWS_SECRET_ACCESS_KEY: test
     depends_on:
@@ -110,7 +110,7 @@ services:
     environment:
       SQS_QUEUE_URL: http://localstack:4566/000000000000/order-events
       AWS_ENDPOINT_URL: http://localstack:4566
-      AWS_REGION: us-east-1
+      AWS_REGION: eu-west-2
       AWS_ACCESS_KEY_ID: test
       AWS_SECRET_ACCESS_KEY: test
       ORDER_SERVICE_URL: http://order-service:8081
