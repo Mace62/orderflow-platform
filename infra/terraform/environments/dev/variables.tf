@@ -17,7 +17,7 @@ variable "environment" {
 }
 
 variable "ecr_force_delete" {
-  description = "Allow destroying ECR repos that still contain images (useful in dev)"
+  description = "Allow destroying ECR repos that still contain images"
   type        = bool
   default     = true
 }

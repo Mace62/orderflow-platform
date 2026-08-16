@@ -1,5 +1,5 @@
 output "state_bucket_name" {
-  description = "S3 bucket for Terraform remote state (use in other stacks' backend config)"
+  description = "S3 bucket for Terraform remote state"
   value       = aws_s3_bucket.tfstate.id
 }
 
