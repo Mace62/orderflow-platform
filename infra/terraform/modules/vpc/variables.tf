@@ -41,17 +41,17 @@ variable "nat_mode" {
 }
 
 variable "interface_endpoints" {
-  description = "A list of interface endpoints to create"
+  description = "A list of interface endpoints to create, S3 created regardless"
   type        = list(string)
-  default = [
-    "s3",
-    "ecr.api",
-    "ecr.dkr",
-    "sts",
-    "ssm",
-    "ssmmessages",
-    "ec2messages",
-    "secretsmanager",
-    "logs",
-  ]
-}
+  default = []
+  # default = [
+  #   "ecr.api",
+  #   "ecr.dkr",
+  #   "sts",
+  #   "ssm",
+  #   "ssmmessages",
+  #   "ec2messages",
+  #   "secretsmanager",
+  #   "logs",
+  # ]
+} 
