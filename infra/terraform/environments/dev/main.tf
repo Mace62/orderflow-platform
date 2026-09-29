@@ -53,10 +53,10 @@ module "ecr" {
 module "eks" {
   source = "../../modules/eks"
 
-  project            = var.project
-  cluster_name       = local.cluster_name
-  vpc_id             = module.vpc.vpc_id
-  private_subnet_ids = module.vpc.private_subnet_ids
-  public_access_cidrs = var.public_access_cidrs
+  project              = var.project
+  cluster_name         = local.cluster_name
+  vpc_id               = module.vpc.vpc_id
+  private_subnet_ids   = module.vpc.private_subnet_ids
+  public_access_cidrs  = var.public_access_cidrs
   admin_principal_arns = var.admin_principal_arns
 }
