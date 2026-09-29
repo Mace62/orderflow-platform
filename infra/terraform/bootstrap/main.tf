@@ -2,8 +2,8 @@ resource "aws_s3_bucket" "tfstate" {
   bucket = var.state_bucket_name
 
   tags = {
-    Name        = var.state_bucket_name
-    ManagedBy   = "terraform"
+    Name      = var.state_bucket_name
+    ManagedBy = "terraform"
   }
 }
 

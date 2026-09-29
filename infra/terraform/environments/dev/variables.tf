@@ -45,3 +45,14 @@ variable "nat_mode" {
   type        = string
   default     = "single"
 }
+
+variable "admin_principal_arns" {
+  description = "The ARNs of the admin which can access the EKS cluster"
+  type        = list(string)
+  default     = []
+}
+
+variable "public_access_cidrs" {
+  description = "The CIDR blocks that are allowed to access the EKS cluster API"
+  type        = list(string)
+}

@@ -37,29 +37,41 @@ variable "api_access" {
 variable "public_access_cidrs" {
   description = "The CIDR blocks that are allowed to access the EKS cluster API"
   type        = list(string)
-  default     = ["0.0.0.0/0"]
+  default     = []
 }
 
 variable "node_instance_types" {
-    description = "The instance types of the nodes for the bootstrap group"
-    type = list(string)
-    default = ["t3.large"]
+  description = "The instance types of the nodes for the bootstrap group"
+  type        = list(string)
+  default     = ["t3.large"]
 }
 
 variable "node_min_size" {
-    description = "The minimum number of nodes in the bootstrap group"
-    type = number
-    default = 2
+  description = "The minimum number of nodes in the bootstrap group"
+  type        = number
+  default     = 2
 }
 
 variable "node_max_size" {
-    description = "The maximum number of nodes in the bootstrap group"
-    type = number
-    default = 3
+  description = "The maximum number of nodes in the bootstrap group"
+  type        = number
+  default     = 3
 }
 
 variable "node_desired_size" {
-    description = "The desired number of nodes in the bootstrap group"
-    type = number
-    default = 2
+  description = "The desired number of nodes in the bootstrap group"
+  type        = number
+  default     = 2
+}
+
+variable "bootstrap_cluster_creator_admin_permissions" {
+  description = "Whether the bootstrap cluster creator has admin permissions"
+  type        = bool
+  default     = false
+}
+
+variable "admin_principal_arns" {
+  description = "The ARNs of the admin which can access the EKS cluster"
+  type        = list(string)
+  default     = []
 }

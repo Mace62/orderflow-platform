@@ -44,7 +44,7 @@ resource "aws_ecr_lifecycle_policy" "this" {
         action = {
           type = "expire"
         }
-      }#,
+      } #,
       # {
       #   rulePriority = 2
       #   description  = "Keep only the last ${var.lifecycle_keep_count} tagged images"
