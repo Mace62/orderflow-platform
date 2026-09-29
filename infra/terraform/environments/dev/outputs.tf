@@ -23,12 +23,30 @@ output "private_subnet_ids" {
   value       = module.vpc.private_subnet_ids
 }
 
-output "cluster_name" {
-  description = "Cluster name used for EKS / Karpenter subnet tags"
-  value       = local.cluster_name
-}
-
 output "azs" {
   description = "Availability zones selected for this environment"
   value       = local.azs
+}
+
+output "cluster_name" {
+  value = module.eks.cluster_name
+}
+
+output "cluster_endpoint" {
+  value = module.eks.cluster_endpoint
+}
+
+output "oidc_issuer_url" {
+  description = "Hand this to the IRSA session next week."
+  value       = module.eks.oidc_issuer_url
+}
+
+output "node_role_arn" {
+  description = "Karpenter reuses this node role later."
+  value       = module.eks.node_role_arn
+}
+
+output "update_kubeconfig" {
+  description = "Copy-paste this to point kubectl at the new cluster."
+  value       = "aws eks update-kubeconfig --name ${module.eks.cluster_name} --region ${var.aws_region}"
 }
